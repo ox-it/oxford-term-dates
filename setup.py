@@ -2,11 +2,11 @@
 
 from distutils.core import setup
 
-setup(name='Distutils',
+setup(name='oxford_term_dates',
       version='1.0',
-      description='Oxford University Computing Services',
+      description='A Python library for translating between real dates and Oxford term dates',
       author='Oxford University Computing Services',
       author_email='mobileoxford@oucs.ox.ac.uk',
       url='https://github.com/oucs/oxford-term-dates',
-      packages=['oxford_term_dates'],
+      packages=['oxford_term_dates','oxford_term_dates.templatetags'],
      )
