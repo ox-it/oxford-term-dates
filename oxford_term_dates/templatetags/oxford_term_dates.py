@@ -1,6 +1,6 @@
 from django import template
 
-from mobileoxford.apps.oxford_term_dates import format_today, ox_date_dict
+from oxford_term_dates import format_today, ox_date_dict
 
 register = template.Library()
 
