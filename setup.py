@@ -12,7 +12,7 @@ setup(name='oxford_term_dates',
       classifiers=[
         'Framework :: Django',
         'Development Status :: 5 - Production/Stable',
-        'License :: OSI Approved :: Academic Free License',
+        'License :: OSI Approved :: Academic Free License (AFL)',
         'Intended Audience :: Education',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
