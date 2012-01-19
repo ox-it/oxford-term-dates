@@ -2,6 +2,7 @@ import unittest
 from datetime import datetime, timedelta, date
 import oxford_term_dates
 
+
 class TestOxfordTermDates(unittest.TestCase):
 
     def test_first_day_term(self):
@@ -35,4 +36,3 @@ class TestOxfordTermDates(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
