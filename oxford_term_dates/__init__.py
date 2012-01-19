@@ -26,6 +26,7 @@ TERM_LETTERS = {
     3: 'm',
 }
 
+# from http://www.ox.ac.uk/about_the_university/university_year/dates_of_term.html
 TERM_STARTS = {
     (2007, 3): date(2007,  9, 30),
     (2008, 1): date(2008,  1,  6),
@@ -42,6 +43,9 @@ TERM_STARTS = {
     (2011, 3): date(2011, 10,  2),
     (2012, 1): date(2012,  1,  8),
     (2012, 2): date(2012,  4, 15),
+    (2012, 3): date(2012, 9, 30),
+    (2013, 1): date(2013, 1, 6),
+    (2013, 2): date(2013, 4, 14),
 }
 
 OFFSET_TERM_STARTS = dict((k,v-timedelta(14)) for k,v in TERM_STARTS.items())
