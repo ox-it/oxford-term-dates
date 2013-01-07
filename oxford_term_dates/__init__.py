@@ -87,6 +87,7 @@ def ox_date_dict(dt=None):
     year, term, week, day = normal_to_ox(dt)
     return {
         'day_name': DAY_NAMES[day],
+        'day_name_short': DAY_NAMES[day][:3],
         'day': day,
         'week': week,
         'ordinal': 'th' if 10<week<20 else {1:'st',2:'nd',3:'rd'}.get(abs(week)%10, 'th'),
@@ -96,6 +97,7 @@ def ox_date_dict(dt=None):
         'year': year,
         'day_number': dt.day,
         'month': dt.strftime('%b'),
+        'month_long': dt.strftime('%B'),
     }
 
 def format_today():
