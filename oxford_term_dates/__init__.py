@@ -51,7 +51,7 @@ TERM_STARTS = {
     (2014, 2): date(2014, 4, 20),  # Easter Sunday?
 }
 
-OFFSET_TERM_STARTS = dict((k,v-timedelta(14)) for k,v in TERM_STARTS.items())
+OFFSET_TERM_STARTS = dict((k, v-timedelta(14)) for k, v in TERM_STARTS.items())
 
 DAY_NAMES = [
     'Sunday', 'Monday', 'Tuesday', 'Wednesday',
@@ -61,13 +61,16 @@ DAY_NAMES = [
 TERM_STARTS_LIST = sorted(TERM_STARTS.items())
 OFFSET_TERM_STARTS_LIST = sorted(OFFSET_TERM_STARTS.items())
 
+
 def get_term_display(s):
     return "%s %s" % (TERM_NAMES[int(s[4])], s[:4])
 
-def term_as_string(year = None, term = None):
+
+def term_as_string(year=None, term=None):
     if year is None:
         year, term = term_start()
     return "%d%d" % (year, term)
+
 
 def term_start(pdate=None):
     if pdate is None:
@@ -77,14 +80,17 @@ def term_start(pdate=None):
             break
     return OFFSET_TERM_STARTS_LIST[i-1][0]
 
-def ox_to_normal(year, term, week = 0, day = 0):
+
+def ox_to_normal(year, term, week=0, day=0):
     return TERM_STARTS[(year, term)] + timedelta(week*7+day)
+
 
 def normal_to_ox(pdate):
     year, term = term_start(pdate)
     week, day = divmod((pdate - OFFSET_TERM_STARTS[(year, term)] - timedelta(14)).days, 7)
     return (year, term, week, day)
-    
+
+
 def ox_date_dict(dt=None):
     dt = dt.date() if dt else date.today()
     year, term, week, day = normal_to_ox(dt)
@@ -93,7 +99,7 @@ def ox_date_dict(dt=None):
         'day_name_short': DAY_NAMES[day][:3],
         'day': day,
         'week': week,
-        'ordinal': 'th' if 10<week<20 else {1:'st',2:'nd',3:'rd'}.get(abs(week)%10, 'th'),
+        'ordinal': 'th' if 10 < week < 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(abs(week) % 10, 'th'),
         'term': term,
         'term_short': TERM_LETTERS[term].upper(),
         'term_long': TERM_NAMES[term],
@@ -102,6 +108,7 @@ def ox_date_dict(dt=None):
         'month': dt.strftime('%b'),
         'month_long': dt.strftime('%B'),
     }
+
 
 def format_today():
     return "%(day_name)s, %(week)d%(ordinal)s week, %(term_long)s %(year)d (%(day_number)d %(month)s)" % ox_date_dict()
