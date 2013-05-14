@@ -27,6 +27,7 @@ TERM_LETTERS = {
 }
 
 # from http://www.ox.ac.uk/about_the_university/university_year/dates_of_term.html
+# take the date from the main website, remove 7 days
 TERM_STARTS = {
     (2007, 3): date(2007,  9, 30),
     (2008, 1): date(2008,  1,  6),
