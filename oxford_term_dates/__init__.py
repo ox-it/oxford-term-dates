@@ -53,6 +53,9 @@ TERM_STARTS = {
     (2014, 3): date(2014, 10, 5),
     (2015, 1): date(2015, 1, 11),
     (2015, 2): date(2015, 4, 19)
+    (2015, 3): date(2015, 10, 4),
+    (2016, 1): date(2016, 1, 10),
+    (2016, 2): date(2016, 4, 17)
 }
 
 OFFSET_TERM_STARTS = dict((k, v-timedelta(14)) for k, v in TERM_STARTS.items())
