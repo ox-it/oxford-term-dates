@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 
 # Requirements:
 # * Convert from an ox date to a normal date                ox_to_normal
@@ -115,8 +115,10 @@ def normal_to_ox(pdate):
 
 
 def ox_date_dict(dt=None):
-    if not isinstance(dt, date):
-        dt = dt.date() if dt else date.today()
+    if dt is None:
+        dt = date.today()
+    elif isinstance(dt, datetime):
+        dt = dt.date()
     year, term, week, day = normal_to_ox(dt)
     return {
         'day_name': DAY_NAMES[day],
