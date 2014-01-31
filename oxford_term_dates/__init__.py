@@ -71,6 +71,9 @@ TERM_STARTS = {
     (2020, 2): date(2020, 4, 19),
 }
 
+# Sanity check; all dates should be Sundays
+assert all(dt.isoweekday() == 7 for dt in TERM_STARTS.values())
+
 OFFSET_TERM_STARTS = dict((k, v-timedelta(14)) for k, v in TERM_STARTS.items())
 
 DAY_NAMES = [
