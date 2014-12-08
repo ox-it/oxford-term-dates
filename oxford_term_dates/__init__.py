@@ -143,6 +143,12 @@ def format_date(date_dict):
     """
     return "%(day_name)s, %(week)d%(ordinal)s week, %(term_long)s %(year)d (%(day_number)d %(month)s)" % date_dict
 
+def format_date_nocal(date_dict):
+    """Format a date to "standard" Oxford format, but excluding the calendar date at the end
+    :param date_dict: date dict
+    :return: String
+    """
+    return "%(day_name)s, %(week)d%(ordinal)s week, %(term_long)s %(year)d" % date_dict
 
 def format_today():
     return format_date(ox_date_dict())

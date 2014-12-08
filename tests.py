@@ -39,5 +39,10 @@ class TestOxfordTermDates(unittest.TestCase):
         formatted = oxford_term_dates.format_date(dico)
         self.assertEqual("Tuesday, 4th week, Trinity 2013 (14 May)", formatted)
 
+    def test_format(self):
+        dico = oxford_term_dates.ox_date_dict(datetime(2013, 05, 14))
+        formatted = oxford_term_dates.format_date_nocal(dico)
+        self.assertEqual("Tuesday, 4th week, Trinity 2013", formatted)
+
 if __name__ == "__main__":
     unittest.main()
