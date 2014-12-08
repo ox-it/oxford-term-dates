@@ -1,5 +1,6 @@
-Oxford Term Dates
------------------
+# Oxford Term Dates
+
+[![Build Status](https://travis-ci.org/ox-it/oxford-term-dates.svg?branch=master)](https://travis-ci.org/ox-it/oxford-term-dates)
 
 This provides a nice Python library for converting calendar dates into Oxford
 term dates, and vice versa. Have a look in oxford_term_dates/__init__.py for
