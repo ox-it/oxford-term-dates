@@ -5,9 +5,9 @@ from distutils.core import setup
 setup(name='oxford_term_dates',
       version='1.1',
       description='A Python library for translating between real dates and Oxford term dates',
-      author='Oxford University Computing Services',
-      author_email='mobileoxford@oucs.ox.ac.uk',
-      url='https://github.com/oucs/oxford-term-dates',
+      author='IT Services, University of Oxford',
+      author_email='mobileoxford@it.ox.ac.uk',
+      url='https://github.com/ox-it/oxford-term-dates',
       packages=['oxford_term_dates','oxford_term_dates.templatetags'],
       classifiers=[
         'Framework :: Django',
