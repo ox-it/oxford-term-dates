@@ -136,10 +136,30 @@ def term_as_string(year=None, term=None):
 def term_start(pdate=None):
     if pdate is None:
         pdate = date.today()
-    for i in range(1, len(OFFSET_TERM_STARTS_LIST)):
-        if OFFSET_TERM_STARTS_LIST[i-1][1] <= pdate and OFFSET_TERM_STARTS_LIST[i][1] > pdate:
-            break
-    return OFFSET_TERM_STARTS_LIST[i-1][0]
+    for year in range(pdate.year-1, pdate.year+2):
+        for term in (1, 2, 3):
+            try:
+                offset_term_start = OFFSET_TERM_STARTS[(year, term)]
+            except KeyError:
+                continue
+
+            if offset_term_start > pdate:
+                raise ValueError("We don't have dates going that far back.")
+
+            if term == 3:
+                next_year, next_term = year + 1, 1
+            else:
+                next_year, next_term = year, term + 1
+
+            try:
+                next_offset_term_start = OFFSET_TERM_STARTS[(next_year, next_term)]
+            except KeyError:
+                # We've run out of info; we're done here
+                return year, term
+
+            if next_offset_term_start > pdate:
+                return year, term
+
 
 
 def ox_to_normal(year, term, week=0, day=0):
