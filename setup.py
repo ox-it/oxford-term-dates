@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='oxford_term_dates',
-      version='1.3.0',
+      version='1.3.1',
       description='A Python library for translating between real dates and Oxford term dates',
       author='IT Services, University of Oxford',
       author_email='mobileoxford@it.ox.ac.uk',
